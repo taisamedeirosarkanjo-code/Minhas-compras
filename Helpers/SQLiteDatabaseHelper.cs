@@ -21,7 +21,6 @@ namespace MauiAppMinhasCompras.Helpers
         public Task<List<Produto>> Update(Produto p)
         {
             string sql = "UPDATE Produto SET Descricao=?, Quantidade=?, Preco=? WHERE Id=?";
-
             return _conn.QueryAsync<Produto>(
                 sql, p.Descricao, p.Quantidade, p.Preco, p.Id
             );
@@ -40,7 +39,6 @@ namespace MauiAppMinhasCompras.Helpers
         public Task<List<Produto>> Search(string q)
         {
             string sql = "SELECT * FROM Produto WHERE Descricao LIKE '%" + q + "%'";
-
             return _conn.QueryAsync<Produto>(sql);
         }
     }
