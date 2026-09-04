@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppMinhasCompras.Views.ListaProduto"
+             Title="Minhas Compras">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Total" Clicked="ToolbarItem_Clicked_1" />
+        <ToolbarItem Text="Novo" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <VerticalStackLayout>
+
+        <SearchBar x:Name="txt_search"
+                   Placeholder="Digite para buscar"
+                   TextChanged="txt_search_TextChanged" />
+
+        <ListView x:Name="lst_produtos">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Descricao}"
+                        Detail="{Binding Total, StringFormat='Total: {0:C}'}" >
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Excluir"
+                                      IsDestructive="True"
+                                      Clicked="MenuItem_Clicked" />
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </VerticalStackLayout>
+
+</ContentPage>
