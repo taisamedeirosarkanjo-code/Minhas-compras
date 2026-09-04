@@ -1,4 +1,8 @@
-# MauiAppMinhasCompras - Agenda 3
+# minhas-compras
+
+**Repositório:** https://github.com/taisamedeirosarkanjo-code/minhas-compras
+
+## MauiAppMinhasCompras - Agenda 3
 
 ## Tema: Inserção de Registros no SQLite com .NET MAUI
 
