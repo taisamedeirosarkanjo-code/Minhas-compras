@@ -1,0 +1,22 @@
+// Exemplo de inicialização do banco de dados
+// Geralmente colocado em App.xaml.cs
+
+using MauiAppMinhasCompras.Helpers;
+
+namespace MauiAppMinhasCompras
+{
+    public partial class App : Application
+    {
+        public static SQLiteDatabaseHelper Db { get; private set; }
+
+        public App()
+        {
+            InitializeComponent();
+
+            string path = Path.Combine(FileSystem.AppDataDirectory, "banco_sqlite_compras.db3");
+            Db = new SQLiteDatabaseHelper(path);
+
+            MainPage = new NavigationPage(new Views.ListaProduto());
+        }
+    }
+}
